@@ -1,0 +1,72 @@
+/* 1. Semua Warna & Font di :root */
+:root {
+    --color-black: #000000;
+    --color-dark: #1A1A1A;
+    --color-gray-bg: #F4F4F4;
+    --color-white: #FFFFFF;
+    --color-accent: #F5A623;
+    --color-text-muted: #666666;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+/* 2. Atur Font Dasar Seluruh Website */
+body {
+    font-family: var(--font-main);
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+/* 3. Komponen Tombol Hitam Khas Desain Tasty Food */
+.btn-tasty {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 0; /* Kotak tegas sesuai desain */
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-tasty:hover {
+    background-color: #333333;
+    color: var(--color-white);
+}
+
+/* 4. Komponen Garis Pendek di Bawah Judul (Tentang Kami, dll) */
+.title-line {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-black);
+    margin: 16px auto;
+}
+
+/* 5. Helper Background Abu-abu */
+.bg-tasty-gray {
+    background-color: var(--color-gray-bg);
+}
+
+/* Jarak atas & bawah standar untuk setiap bagian (section) */
+.section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Pembatas lebar konten agar tidak mepet ke pinggir kiri & kanan layar */
+.tasty-container {
+    max-width: 1140px; /* Lebar maksimal konten di layar besar */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;  /* Jarak aman dari pinggir layar HP/tablet */
+    padding-right: 24px;
+}
+
+/* Jarak khusus bagian paling atas agar tidak ketabrak Navbar */
+.top-spacing {
+    padding-top: 100px;
+}
