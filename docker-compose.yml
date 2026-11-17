@@ -1,0 +1,52 @@
+services:
+  # 1. SERVER DATABASE
+  mysql-server:
+    image: mysql:8.0
+    container_name: MySQL-tasty_food
+    environment:
+      MYSQL_DATABASE: tastyFood_db
+      MYSQL_USER: tasty_food
+      MYSQL_PASSWORD: tasty_food
+      MYSQL_ROOT_PASSWORD: passwordroot
+    ports:
+      - "3307:3306"
+    networks:
+      - tasty_food
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # 2. SERVER BACKEND (LARAVEL)
+  app-laravel:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: tasty_food_app
+    working_dir: /var/www
+    ports:
+      - "8000:8001"
+    volumes:
+      - ./backend:/var/www
+    command: php artisan serve --host=0.0.0.0 --port=8001
+    depends_on:
+      - mysql-server
+    networks:
+      - tasty_food
+
+  # 3. SERVER UI DATABASE (PHPMYADMIN)
+  phpMyadmin:
+    image: phpmyadmin
+    container_name: PhpMyadmin-API
+    environment:
+      PMA_HOST: mysql-server
+    ports:
+      - "8082:80"
+    depends_on:
+      - mysql-server
+    networks:
+      - tasty_food
+
+volumes:
+  db_data:
+networks:
+  tasty_food:
+    driver: bridge
