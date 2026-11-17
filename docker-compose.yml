@@ -1,5 +1,5 @@
 services:
-  # 1. SERVER DATABASE
+  #SERVER DATABASE
   mysql-server:
     image: mysql:8.0
     container_name: MySQL-tasty_food
@@ -15,7 +15,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
-  # 2. SERVER BACKEND (LARAVEL)
+  #SERVER BACKEND (LARAVEL)
   app-laravel:
     build:
       dockerfile: Dockerfile
@@ -31,7 +31,7 @@ services:
     networks:
       - tasty_food
 
-  # 3. SERVER UI DATABASE (PHPMYADMIN)
+  #SERVER UI DATABASE (PHPMYADMIN)
   phpMyadmin:
     image: phpmyadmin
     container_name: PhpMyadmin-tatsy_food 
