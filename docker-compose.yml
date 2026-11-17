@@ -18,15 +18,14 @@ services:
   # 2. SERVER BACKEND (LARAVEL)
   app-laravel:
     build:
-      context: ./backend
       dockerfile: Dockerfile
     container_name: tasty_food_app
     working_dir: /var/www
     ports:
-      - "8000:8001"
+      - "8001:8000"
     volumes:
-      - ./backend:/var/www
-    command: php artisan serve --host=0.0.0.0 --port=8001
+      - .:/var/www
+    command: php artisan serve --host=0.0.0.0 --port=8000
     depends_on:
       - mysql-server
     networks:
@@ -35,7 +34,7 @@ services:
   # 3. SERVER UI DATABASE (PHPMYADMIN)
   phpMyadmin:
     image: phpmyadmin
-    container_name: PhpMyadmin-API
+    container_name: PhpMyadmin-tatsy_food 
     environment:
       PMA_HOST: mysql-server
     ports:
