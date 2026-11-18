@@ -1,3 +1,7 @@
-<div>
-    <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
-</div>
+@extends('layouts.app')
+
+@section('title', 'Contact - Tasty Food')
+
+@section('content')
+    <p>Welcome to our Contact page!</p>
+@endsection

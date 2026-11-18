@@ -34,7 +34,7 @@ services:
   #SERVER UI DATABASE (PHPMYADMIN)
   phpMyadmin:
     image: phpmyadmin
-    container_name: PhpMyadmin-tatsy_food 
+    container_name: PhpMyadmin-tasty_food 
     environment:
       PMA_HOST: mysql-server
     ports:
