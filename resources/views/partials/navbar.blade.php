@@ -1,12 +1,20 @@
 @php
     $textColor = 'text-black';
-    $mobileBg = 'bg-white shadow-xl border border-neutral-100 text-black';
+    $navLayout = 'md:justify-start md:space-x-8';
+    $mobileBg = 'bg-white shadow-xl border border-neutral-800 text-black';
     $activeDesktop = "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current";
+
+    if (!request()->routeIs('home')) {
+        $textColor = 'text-white';
+        $navLayout = 'md:justify-between';
+        $mobileBg = 'bg-black/90 shadow-xl border border-neutral-800 text-white';
+        $activeDesktop = "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current";
+    }
 @endphp
 
 
 <nav class="absolute top-0 left-0 w-full z-50 py-6 {{ $textColor }}">
-    <div class="tasty-container flex items-center justify-between md:justify-start md:space-x-8 px-6 md:px-0">
+    <div class="tasty-container flex items-center justify-between {{ $navLayout }}">
         
         {{-- Logo Brand --}}
         <a href="{{ route('home') }}" class="text-xl font-extrabold tracking-wider uppercase">

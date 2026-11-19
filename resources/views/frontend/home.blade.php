@@ -14,7 +14,7 @@
                 <p class="text-sm text-neutral-600 leading-relaxed max-w-md">Nikmati hidangan lezat dan sehat dari Tasty Food. Kami menyajikan makanan berkualitas tinggi yang memanjakan lidah Anda.</p>
                 <a href="{{ route('about') }}" class="btn-tasty">TENTANG KAMI</a>
             </div>
-            <img src="{{ asset('asset/img-4.png') }}" alt="" class="w-full max-w-md mx-auto mt-10 lg:mt-0 lg:max-w-none lg:w-[620px] lg:absolute lg:-top-30 lg:-right-35">
+            <img src="{{ asset('asset/img-4.png') }}" alt="" class="w-full max-w-md mx-auto mt-10 lg:mt-0 lg:max-w-none lg:w-[620px] lg:absolute lg:-top-30 lg:-right-35 animate-spin [animation-duration:20s]">
         </div>
     </section>
 
