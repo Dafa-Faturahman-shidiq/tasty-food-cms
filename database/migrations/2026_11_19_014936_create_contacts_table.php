@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('home_cards', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('subject');
+            $table->string('name');
+            $table->string('email');
+            $table->text('message');
+            $table->boolean('is_read')->default(false); // penanda pesan sudah dibaca admin
             $table->timestamps();
         });
     }
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_cards');
+        Schema::dropIfExists('contacts');
     }
 };
