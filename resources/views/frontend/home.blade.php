@@ -14,7 +14,7 @@
                 <p class="text-sm text-neutral-600 leading-relaxed max-w-md">Nikmati hidangan lezat dan sehat dari Tasty Food. Kami menyajikan makanan berkualitas tinggi yang memanjakan lidah Anda.</p>
                 <a href="{{ route('about') }}" class="btn-tasty">TENTANG KAMI</a>
             </div>
-            <img src="{{ asset('asset/img-4.png') }}" alt="" class="w-full max-w-md mx-auto mt-10 lg:mt-0 lg:max-w-none lg:w-[620px] lg:absolute lg:-top-30 lg:-right-35 animate-spin [animation-duration:20s]">
+            <img src="{{ asset('asset/img-4.png') }}" alt="" class="w-full max-w-md mx-auto mt-10 lg:mt-0 lg:max-w-none lg:w-[620px] lg:absolute lg:-top-30 lg:-right-35 animate-spin [animation-duration:25s]">
         </div>
     </section>
 
@@ -22,7 +22,7 @@
     <section class="bg-white py-20">
         <div class="tasty-container">
             <div class="text-center">
-                <h2 class="text-3xl font-extrabold uppercase tracking-wide mb-4">TENTANG KAMI</h2>
+                <h2 class="text-3xl  font-extrabold uppercase tracking-wide mb-4">TENTANG KAMI</h2>
                 <p class="text-sm text-neutral-600 leading-relaxed max-w-md mx-auto">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.
                 </p>
