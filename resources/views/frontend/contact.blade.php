@@ -14,19 +14,19 @@
     <section class="bg-white section-space">
         <div class="tasty-container">
             <h2 class="text-2xl lg:text-3xl font-extrabold uppercase mb-8">KONTAK KAMI</h2>
-            <form action="#" method="post">
+            <form action="{{ route('contact.store') }}" method="post">
                 @csrf
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                     <div class="flex flex-col gap-4">
                         {{-- subject --}}
-                        <input type="text" placeholder="Subjek" class="w-full px-4 py-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition">
+                        <input type="text" name="subject" placeholder="subject" class="w-full px-4 py-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition">
                         {{-- name  --}}
-                        <input type="text" placeholder="Nama" class="w-full px-4 py-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition">
+                        <input type="text" name="name" placeholder="name" class="w-full px-4 py-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition">
                         {{-- email --}}
-                        <input type="email" placeholder="Email" class="w-full px-4 py-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition">
+                        <input type="email" name="email" placeholder="email" class="w-full px-4 py-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition">
                     </div>
                     {{-- message --}}
-                    <textarea name="message" placeholder="Message" rows="6" class="w-full h-full min-h-[160px] px-4 py-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition resize-none"></textarea>
+                    <textarea name="message" placeholder="message" rows="6" class="w-full h-full min-h-[160px] px-4 py-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition resize-none"></textarea>
                 </div>
                 <button type="submit" class="w-full bg-black text-white font-bold text-xs tracking-widest uppercase py-4 rounded-xl hover:bg-neutral-800 transition cursor-pointer">KIRIM</button>
             </form>

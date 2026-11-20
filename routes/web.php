@@ -8,8 +8,12 @@ use App\Http\Controllers\PengunjungController;
 Route::get('/', [PengunjungController::class, 'showHome'])->name('home');
 Route::get('/about', [PengunjungController::class, 'showAbout'])->name('about');
 Route::get('/news', [PengunjungController::class, 'showNews'])->name('news.index');
+Route::get('/news/{slug}', [PengunjungController::class, 'showNewsDetail'])->name('news.show');
+
 Route::get('/gallery', [PengunjungController::class, 'showGallery'])->name('gallery');
+
 Route::get('/contact', [PengunjungController::class, 'showContact'])->name('contact');
+Route::post('/contact', [PengunjungController::class, 'storeContact'])->name('contact.store');
 
 
 Route::get('/login', function () {
