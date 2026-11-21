@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\CompanyProfileController;
 
 // AUTHENTICATION
 Route::middleware('guest')->group(function () {
@@ -27,6 +28,9 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('messages', ContactController::class)
                 ->only(['index', 'show', 'destroy'])
                 ->parameters(['messages' => 'contact']);
+
+    Route::get('/profile', [CompanyProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [CompanyProfileController::class, 'update'])->name('profile.update');
 });
 
 // PENGUNJUNG

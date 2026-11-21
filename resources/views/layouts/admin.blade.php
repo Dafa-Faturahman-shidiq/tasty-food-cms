@@ -42,7 +42,7 @@
                     class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.contacts.index') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
                     Pesan Masuk
                 </a>
-                <a href="#" 
+                <a href="{{ route('admin.profile.edit') }}" 
                     class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.profile.edit') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
                     Profil Perusahaan
                 </a>
