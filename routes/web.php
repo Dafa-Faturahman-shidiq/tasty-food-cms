@@ -3,6 +3,23 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PengunjungController;
+use App\Http\Controllers\AuthController;
+
+// AUTHENTICATION
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+});
+
+// ADMIN
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    // Route dashboard & CRUD nanti kita kumpulkan di dalam grup ini
+    Route::get('/dashboard', function () {
+        return 'Halo Admin! Login berhasil.';
+    })->name('dashboard');
+});
 
 // PENGUNJUNG
 Route::get('/', [PengunjungController::class, 'showHome'])->name('home');

@@ -47,7 +47,7 @@
                     {{-- message --}}
                     <textarea name="message" placeholder="message" class="w-full h-full min-h-[160px] px-4 py-3.5 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition resize-none">{{ old('message') }}</textarea>
                 </div>
-                <button type="submit" class="w-full bg-black text-white font-bold text-xs tracking-widest uppercase py-4 rounded-xl hover:bg-neutral-800 transition cursor-pointer">KIRIM</button>
+                    <button type="submit" class="w-full bg-black text-white font-bold text-xs tracking-widest uppercase py-4 rounded-xl hover:bg-neutral-800 transition cursor-pointer">KIRIM</button>
             </form>
 
             {{-- CONTACT INFO --}}
