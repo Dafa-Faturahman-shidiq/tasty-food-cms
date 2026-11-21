@@ -5,8 +5,8 @@
 **Sistem manajemen konten dan restoran berbasis web yang modern, ringan, dan mudah dikelola.**
 
 ![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
@@ -18,7 +18,7 @@
 
 ## 📖 Tentang Proyek
 
-**Tasty Food CMS** adalah aplikasi web *Restaurant Management System* (RMS) yang dikembangkan menggunakan **Laravel 10** dan **Bootstrap 5**. Aplikasi ini terdiri dari halaman publik (*landing page*) untuk pengunjung serta dashboard admin untuk mengelola konten restoran seperti berita, galeri, dan pesan dari pelanggan.
+**Tasty Food CMS** adalah aplikasi web *Restaurant Management System* (RMS) yang dikembangkan menggunakan **Laravel 12** dan **Tailwind CSS**. Aplikasi ini terdiri dari halaman publik (*landing page*) untuk pengunjung serta dashboard admin untuk mengelola konten restoran seperti berita, galeri, dan pesan dari pelanggan.
 
 Proyek ini dikembangkan sebagai bagian dari kegiatan **Praktik Kerja Lapangan (PKL)** di **PT Cyberlabs**.
 
@@ -41,10 +41,10 @@ Proyek ini dikembangkan sebagai bagian dari kegiatan **Praktik Kerja Lapangan (P
 
 | Kategori   | Teknologi                |
 |------------|--------------------------|
-| Backend    | Laravel 10 (PHP)         |
-| Frontend   | Blade, Bootstrap 5       |
+| Backend    | Laravel 12 (PHP 8.2+)    |
+| Frontend   | Blade, Tailwind CSS, Vite|
 | Database   | MySQL                    |
-| Tools      | Composer, NPM, Git       |
+| Tools      | Composer, NPM, Vite, Git |
 
 ## 📸 Tampilan Aplikasi
 
@@ -58,9 +58,9 @@ Proyek ini dikembangkan sebagai bagian dari kegiatan **Praktik Kerja Lapangan (P
 
 Pastikan perangkat Anda sudah terpasang:
 
-- [PHP](https://www.php.net/) >= 8.1
+- [PHP](https://www.php.net/) >= 8.2
 - [Composer](https://getcomposer.org/) >= 2.x
-- [Node.js](https://nodejs.org/) & NPM *(opsional, bila menggunakan build aset)*
+- [Node.js](https://nodejs.org/) >= 18 & NPM (untuk Vite dan Tailwind CSS)
 - [MySQL](https://www.mysql.com/) / MariaDB
 - [Git](https://git-scm.com/)
 
@@ -79,7 +79,7 @@ cd tasty-food-cms
 
 ```bash
 composer install
-npm install && npm run build   # opsional
+npm install
 ```
 
 **3. Salin dan konfigurasi file environment**
@@ -123,9 +123,17 @@ php artisan storage:link
 
 **8. Jalankan aplikasi**
 
+Jalankan dua terminal secara bersamaan:
+
 ```bash
+# Terminal 1 — server Laravel
 php artisan serve
+
+# Terminal 2 — Vite (compile Tailwind CSS & JS)
+npm run dev
 ```
+
+Untuk produksi, build aset dengan `npm run build`.
 
 Aplikasi dapat diakses melalui **http://127.0.0.1:8000**
 
@@ -149,8 +157,10 @@ tasty-food-cms/
 ├── database/
 │   ├── migrations/          # Skema database
 │   └── seeders/             # Data awal
-├── public/                  # Aset publik (CSS, JS, gambar)
+├── public/                  # Aset publik & hasil build
 ├── resources/
+│   ├── css/                 # Entry Tailwind CSS
+│   ├── js/                  # JavaScript
 │   └── views/               # Template Blade (landing & dashboard)
 ├── routes/
 │   └── web.php              # Definisi rute aplikasi
@@ -195,7 +205,7 @@ Proyek ini dilisensikan di bawah **MIT License**. Lihat berkas [LICENSE](LICENSE
 ## 🙏 Ucapan Terima Kasih
 
 - **PT Cyberlabs** atas kesempatan dan bimbingan selama program PKL
-- [Laravel](https://laravel.com/) dan [Bootstrap](https://getbootstrap.com/) atas framework yang luar biasa
+- [Laravel](https://laravel.com/) dan [Tailwind CSS](https://tailwindcss.com/) atas framework yang luar biasa
 
 ---
 
