@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PengunjungController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\DashboardController;
 
 // AUTHENTICATION
 Route::middleware('guest')->group(function () {
@@ -14,11 +15,7 @@ Route::middleware('guest')->group(function () {
 // ADMIN
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-    // Route dashboard & CRUD nanti kita kumpulkan di dalam grup ini
-    Route::get('/dashboard', function () {
-        return 'Halo Admin! Login berhasil.';
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 // PENGUNJUNG
