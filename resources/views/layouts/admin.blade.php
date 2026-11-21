@@ -30,20 +30,20 @@
                     class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.dashboard') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
                     Dashboard
                 </a>
-                <a href="#" 
-                    class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.galleries.*') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
+                <a href="{{ route('admin.news.index') }}" 
+                    class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.news.index') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
                     Kelola Berita
                 </a>
                 <a href="#" 
-                    class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.galleries.*') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
+                    class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.galleries.index') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
                     Kelola Galeri
                 </a>
                 <a href="#" 
-                    class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.contacts.*') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
+                    class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.contacts.index') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
                     Pesan Masuk
                 </a>
                 <a href="#" 
-                    class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.profile.*') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
+                    class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.profile.edit') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
                     Profil Perusahaan
                 </a>
             </nav>

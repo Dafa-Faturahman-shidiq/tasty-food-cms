@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PengunjungController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\NewsController;
 
 // AUTHENTICATION
 Route::middleware('guest')->group(function () {
@@ -14,8 +15,12 @@ Route::middleware('guest')->group(function () {
 
 // ADMIN
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    // logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    // admin dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('news', NewsController::class)->except(['show']);
 });
 
 // PENGUNJUNG
