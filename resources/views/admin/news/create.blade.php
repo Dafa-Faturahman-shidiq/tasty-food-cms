@@ -4,7 +4,7 @@
 @section('header', 'Tambah Berita Baru')
 
 @section('content')
-    <div class="max-w-3xl bg-white rounded-2xl shadow-sm border border-neutral-100 p-6 sm:p-8">
+    <div class="max-w-3xl bg-white rounded-sm shadow-sm border border-neutral-100 p-6 sm:p-8">
         <form action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
 
@@ -15,7 +15,7 @@
                 </label>
                 <input type="text" id="title" name="title" value="{{ old('title') }}" required
                         placeholder="Masukkan judul berita..."
-                        class="w-full px-4 py-3 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition">
+                        class="w-full px-4 py-3 rounded-sm border border-neutral-300 text-sm focus:outline-none focus:border-black transition">
                 @error('title')
                     <span class="text-xs text-red-600 font-medium mt-1.5 block">{{ $message }}</span>
                 @enderror
@@ -41,7 +41,7 @@
                 </label>
                 <textarea id="content" name="content" rows="8" required
                             placeholder="Tulis isi lengkap berita di sini..."
-                            class="w-full px-4 py-3 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-black transition">{{ old('content') }}</textarea>
+                            class="w-full px-4 py-3 rounded-sm border border-neutral-300 text-sm focus:outline-none focus:border-black transition">{{ old('content') }}</textarea>
                 @error('content')
                     <span class="text-xs text-red-600 font-medium mt-1.5 block">{{ $message }}</span>
                 @enderror
@@ -59,11 +59,11 @@
             {{-- Tombol Aksi --}}
             <div class="pt-4 border-t border-neutral-100 flex items-center gap-3">
                 <button type="submit" 
-                        class="px-6 py-3 bg-black text-white text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-neutral-800 transition cursor-pointer">
+                        class="px-6 py-3 bg-black text-white text-xs font-bold uppercase tracking-wider rounded-sm hover:bg-neutral-800 transition cursor-pointer">
                     Simpan Berita
                 </button>
                 <a href="{{ route('admin.news.index') }}" 
-                    class="px-6 py-3 bg-neutral-100 text-neutral-700 text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-neutral-200 transition">
+                    class="px-6 py-3 bg-neutral-100 text-neutral-700 text-xs font-bold uppercase tracking-wider rounded-sm hover:bg-neutral-200 transition">
                     Batal
                 </a>
             </div>
