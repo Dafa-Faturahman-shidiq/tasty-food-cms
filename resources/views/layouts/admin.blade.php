@@ -34,7 +34,7 @@
                     class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.news.index') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
                     Kelola Berita
                 </a>
-                <a href="#" 
+                <a href="{{ route('admin.galleries.index') }}" 
                     class="block py-2.5 px-4 rounded-sm border transition {{ request()->routeIs('admin.galleries.index') ? 'bg-white text-black font-bold border-black' : 'border-transparent text-neutral-400 hover:bg-white hover:text-black hover:border-black' }}">
                     Kelola Galeri
                 </a>

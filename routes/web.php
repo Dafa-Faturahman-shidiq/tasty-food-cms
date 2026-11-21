@@ -6,6 +6,7 @@ use App\Http\Controllers\PengunjungController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\GalleryController;
 
 // AUTHENTICATION
 Route::middleware('guest')->group(function () {
@@ -21,6 +22,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // admin dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('news', NewsController::class)->except(['show']);
+    Route::resource('galleries', GalleryController::class)->except(['show']);
 });
 
 // PENGUNJUNG

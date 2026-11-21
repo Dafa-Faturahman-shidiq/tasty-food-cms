@@ -28,10 +28,13 @@
                     Foto Utama (Max 2MB: JPG, PNG, WEBP)
                 </label>
                 <div class="mb-3">
-                    <img src="{{ asset($news->image) }}" alt="Preview" class="w-40 h-28 object-cover rounded-xl border border-neutral-200">
-                    <p class="text-[11px] text-neutral-400 mt-1">Biarkan kosong jika tidak ingin mengganti foto.</p>
+                        <img id="image-preview" src="{{ asset($news->image) }}" alt="Preview" 
+                                class="w-48 h-32 object-cover rounded-xl border border-neutral-200 shadow-sm">
+                        <p id="preview-label" class="text-[11px] text-neutral-400 mt-1.5">
+                            Foto saat ini. Pilih file baru di bawah jika ingin menggantinya.
+                        </p>
                 </div>
-                <input type="file" id="image" name="image" accept="image/*" 
+                <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)"
                         class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:uppercase file:bg-black file:text-white hover:file:bg-neutral-800 cursor-pointer">
                 @error('image')
                     <span class="text-xs text-red-600 font-medium mt-1.5 block">{{ $message }}</span>
@@ -73,4 +76,22 @@
             </div>
         </form>
     </div>
+
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('image-preview');
+            const label = document.getElementById('preview-label');
+        
+            if (input.files && input.files[0]) {
+                // Membuat URL sementara dari file yang baru dipilih di komputer
+                preview.src = URL.createObjectURL(input.files[0]);
+                
+                // Ubah keterangan teks biar admin sadar ini foto baru
+                label.textContent = 'Pratinjau foto baru (belum disimpan).';
+                label.classList.remove('text-neutral-400');
+                label.classList.add('text-green-600', 'font-semibold');
+            }
+        }
+    </script>
 @endsection
