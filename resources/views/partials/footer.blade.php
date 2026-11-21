@@ -4,13 +4,13 @@
 
             <div class="lg:col-span-4">
                 <h2 class="text-xl font-extrabold uppercase mb-4">TASTY FOOD</h2>
-                <p class="text-neutral-400 text-sm leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi vitae corrupti laboriosam porro mollitia non! </p>
+                <p class="text-neutral-400 text-sm leading-relaxed">{{ $profile->about_text ?? 'Tasty Food menyajikan hidangan lezat dan sehat.'}}</p>
                 {{-- iccon --}}
                 <div class="flex items-center gap-4 mt-6">
-                    <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-neutral-700 transition-colors">
+                    <a href="{{ $profile->facebook_url ?? '#' }}" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-neutral-700 transition-colors">
                         <img src="{{ asset('asset/fb.png') }}" alt="">
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-neutral-700 transition-colors">
+                    <a href="{{ $profile->twitter_url ?? '#' }}" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-neutral-700 transition-colors">
                         <img src="{{ asset('asset/twit.png') }}" alt="">
                     </a>
                 </div>
@@ -40,13 +40,13 @@
                 <h3 class="font-extrabold mb-4">Contact Info</h3>
                 <ul class="flex flex-col gap-2 sm:space-y-3">
                     <div class="flex items-center gap-3">
-                        <li class="text-neutral-400 hover:text-white transition-colors">tastyfood@gmail.com</li>
+                        <li class="text-neutral-400 hover:text-white transition-colors">{{ $profile->email ?? 'tastyfood@gmail.com' }}</li>
                     </div>
                     <div class="flex items-center gap-3">
-                        <li class="text-neutral-400 hover:text-white transition-colors">+62 812 3456 7890</li>
+                        <li class="text-neutral-400 hover:text-white transition-colors">{{ $profile->phone ?? '+62 812 3456 7890' }}</li>
                     </div>
                     <div class="flex items-center gap-3">
-                        <li class="text-neutral-400 hover:text-white transition-colors">Kota Bandung, Jawa Barat</li>
+                        <li class="text-neutral-400 hover:text-white transition-colors">{{ $profile->address ?? 'Kota Bandung, Jawa Barat' }}</li>
                     </div>
                 </ul>
             </div>

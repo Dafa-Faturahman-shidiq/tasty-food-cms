@@ -14,7 +14,7 @@ class PengunjungController extends Controller
     public function showHome()
     {
         // 1 Berita Spesifik
-        $$featuredNews = News::where('is_featured', true)
+        $featuredNews = News::where('is_featured', true)
                                 ->latest()
                                 ->first();
 
@@ -43,9 +43,9 @@ class PengunjungController extends Controller
     {
         $featuredNews = News::where('is_featured', true)
                                 ->latest()
-                                ->get();
+                                ->first();
 
-        $otherNews = News::where('is_featured', false)
+        $otherNews = News::where('is_featured', false) 
                                 ->latest()
                                 ->get();
 

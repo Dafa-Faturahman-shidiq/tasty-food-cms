@@ -16,7 +16,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div>
                     <h2 class="font-extrabold text-2xl lg:text-3xl uppercase mb-6">Tasty Food</h2>
-                    <p class="text-sm text-neutral-600 leading-relaxed space-y-4">Tasty Food adalah restoran yang berdedikasi untuk menyajikan hidangan lezat dan sehat kepada pelanggan kami. Kami percaya bahwa makanan yang baik tidak hanya memuaskan selera, tetapi juga memberikan manfaat bagi kesehatan.</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed space-y-4">{{ $profile->about_text ?? 'Tasty Food adalah restoran yang berdedikasi untuk menyajikan hidangan lezat dan sehat kepada pelanggan kami. Kami percaya bahwa makanan yang baik tidak hanya memuaskan selera, tetapi juga memberikan manfaat bagi kesehatan.' }}</p>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <img src="{{ asset('asset/chef.jpg') }}" alt="" class="w-full rounded-2xl h-64 lg:h-80 object-cover shadow-lg">
@@ -36,7 +36,7 @@
                 </div>
                 <div>
                     <h2 class="font-extrabold text-2xl lg:text-3xl uppercase mb-6">Visi</h2>
-                    <p class="text-sm text-neutral-600 leading-relaxed space-y-4">Visi Tasty Food adalah menjadi restoran terdepan yang dikenal dengan kualitas makanan yang superior dan pelayanan pelanggan yang luar biasa.</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed space-y-4">{{ $profile->vision_text ?? 'Visi Tasty Food adalah menjadi restoran terdepan yang dikenal dengan kualitas makanan yang superior dan pelayanan pelanggan yang luar biasa.' }}</p>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div>
                     <h2 class="font-extrabold text-2xl lg:text-3xl uppercase mb-6">Misi</h2>
-                    <p class="text-sm text-neutral-600 leading-relaxed space-y-4">Misi Tasty Food adalah untuk menyajikan makanan lezat dan sehat kepada pelanggan kami, sambil memberikan pelayanan terbaik.</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed space-y-4">{{ $profile->mission_text ?? 'Misi Tasty Food adalah untuk menyajikan makanan lezat dan sehat kepada pelanggan kami, sambil memberikan pelayanan terbaik.' }}</p>
                 </div>
                 <div >
                     <img src="{{ asset('asset/main.jpg') }}" alt="" class="w-full h-64 lg:h-72 object-cover rounded-2xl shadow-lg">

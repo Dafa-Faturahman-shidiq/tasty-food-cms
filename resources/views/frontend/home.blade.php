@@ -66,63 +66,36 @@
             <h2 class="font-extrabold uppercase text-2xl text-center mb-12">BERITA KAMI</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {{-- main news --}}
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
-                    <img src="{{ asset('asset/main.jpg') }}" alt="" class="w-full object-cover h-64">
-                    <div class="flex flex-col p-6 flex-1">
-                        <h3 class="font-extrabold text-lg ">Judul Berita Utama</h3>
-                        <p class="text-sm text-neutral-500 leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.</p>
-                        <div class="mt-auto pt-4 flex items-center justify-between">
-                            <a href="#" class="text-xs font-semibold text-[#F5A623] hover:underline">Baca selengkapnya</a>
-                            <span class="text-neutral-400 font-bold tracking-widest">...</span>
+                @if ($featuredNews)
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+                        <img src="{{ asset($featuredNews->image) }}" alt="" class="w-full object-cover h-64">
+                        <div class="flex flex-col p-6 flex-1">
+                            <h3 class="font-extrabold text-lg ">{{ $featuredNews->title }}</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4">{{ Str::limit($featuredNews->content, 150) }}</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between">
+                                <a href="{{ route('news.show', $featuredNews->slug) }}" class="text-xs font-semibold text-[#F5A623] hover:underline">Baca selengkapnya</a>
+                                <span class="text-neutral-400 font-bold tracking-widest">...</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
                 {{-- other news --}}
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
-                        <img src="{{ asset('asset/tomat.jpg') }}" alt="" class="w-full object-cover h-32">
-                        <div class="flex flex-col p-6 flex-1">
-                            <h3 class="font-extrabold text-sm ">Judul Berita Lain</h3>
-                            <p class="text-sm text-neutral-500 leading-relaxed mb-4 line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.</p>
-                            <div class="mt-auto pt-4 flex items-center justify-between">
-                                <a href="#" class="text-xs font-semibold text-[#F5A623] hover:underline">Baca selengkapnya</a>
-                                <span class="text-neutral-400 font-bold tracking-widest">...</span>
+                    @forelse ( $otherNews as $news )
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+                            <img src="{{ asset($news->image) }}" alt="" class="w-full object-cover h-32">
+                            <div class="flex flex-col p-6 flex-1">
+                                <h3 class="font-extrabold text-sm ">{{ $news->title }}</h3>
+                                <p class="text-sm text-neutral-500 leading-relaxed mb-4 line-clamp-2">{{ Str::limit($news->content, 150) }}</p>
+                                <div class="mt-auto pt-4 flex items-center justify-between">
+                                    <a href="{{ route('news.show', $news->slug) }}" class="text-xs font-semibold text-[#F5A623] hover:underline">Baca selengkapnya</a>
+                                    <span class="text-neutral-400 font-bold tracking-widest">...</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
-                        <img src="{{ asset('asset/chef.jpg') }}" alt="" class="w-full object-cover h-32">
-                        <div class="flex flex-col p-6 flex-1">
-                            <h3 class="font-extrabold text-sm">Judul Berita Lain</h3>
-                            <p class="text-sm text-neutral-500 leading-relaxed mb-4 line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.</p>
-                            <div class="mt-auto pt-4 flex items-center justify-between">
-                                <a href="#" class="text-xs font-semibold text-[#F5A623] hover:underline">Baca selengkapnya</a>
-                                <span class="text-neutral-400 font-bold tracking-widest">...</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
-                        <img src="{{ asset('asset/dapur.jpg') }}" alt="" class="w-full object-cover h-32">
-                        <div class="flex flex-col p-6 flex-1">
-                            <h3 class="font-extrabold text-sm">Judul Berita Lain</h3>
-                            <p class="text-sm text-neutral-500 leading-relaxed mb-4 line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.</p>
-                            <div class="mt-auto pt-4 flex items-center justify-between">
-                                <a href="#" class="text-xs font-semibold text-[#F5A623] hover:underline">Baca selengkapnya</a>
-                                <span class="text-neutral-400 font-bold tracking-widest">...</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
-                        <img src="{{ asset('asset/coason.jpg') }}" alt="" class="w-full object-cover h-32">
-                        <div class="flex flex-col p-6 flex-1">
-                            <h3 class="font-extrabold text-sm">Judul Berita Lain</h3>
-                            <p class="text-sm text-neutral-500 leading-relaxed mb-4 line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.</p>
-                            <div class="mt-auto pt-4 flex items-center justify-between">
-                                <a href="#" class="text-xs font-semibold text-[#F5A623] hover:underline">Baca selengkapnya</a>
-                                <span class="text-neutral-400 font-bold tracking-widest">...</span>
-                            </div>
-                        </div>
-                    </div>
+                    @empty
+                        <p class="text-center text-neutral-500">Tidak ada berita lainnya.</p>
+                    @endforelse
                 </div>
             </div>
         </div>
@@ -133,24 +106,13 @@
         <div class="tasty-container">
             <h2 class="font-extrabold uppercase text-2xl text-center mb-12">GALERI KAMI</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                @forelse ( $gallerys as $item )
                 <div class="rounded-2xl overflow-hidden">
-                    <img src="{{ asset('asset/gall1.jpg') }}" alt="" class="w-full h-64 object-cover rounded-xl shadow-sm aspect-square hover:scale-105 transition duration-300">
+                    <img src="{{ asset($item->image) }}" alt="{{ $item->title ?? 'Galeri Tasty Food' }}" class="w-full h-64 object-cover rounded-xl shadow-sm aspect-square hover:scale-105 transition duration-300">
                 </div>
-                <div class="rounded-2xl overflow-hidden">
-                    <img src="{{ asset('asset/gall2.jpg') }}" alt="" class="w-full h-64 object-cover rounded-xl shadow-sm aspect-square hover:scale-105 transition duration-300">
-                </div>
-                <div class="rounded-2xl overflow-hidden">
-                    <img src="{{ asset('asset/gall3.jpg') }}" alt="" class="w-full h-64 object-cover rounded-xl shadow-sm aspect-square hover:scale-105 transition duration-300">
-                </div>
-                <div class="rounded-2xl overflow-hidden">
-                    <img src="{{ asset('asset/gall4.jpg') }}" alt="" class="w-full h-64 object-cover rounded-xl shadow-sm aspect-square hover:scale-105 transition duration-300">
-                </div>
-                <div class="rounded-2xl overflow-hidden">
-                    <img src="{{ asset('asset/gall5.jpg') }}" alt="" class="w-full h-64 object-cover rounded-xl shadow-sm aspect-square hover:scale-105 transition duration-300">
-                </div>
-                <div class="rounded-2xl overflow-hidden">
-                    <img src="{{ asset('asset/gall6.jpg') }}" alt="" class="w-full h-64 object-cover rounded-xl shadow-sm aspect-square hover:scale-105 transition duration-300">
-                </div>
+                @empty
+                    <p class="text-center text-neutral-500">Tidak ada galeri.</p>
+                @endforelse
             </div>
             <div class="text-center mt-12">
                 <a href="{{ route('gallery') }}" class="btn-tasty">LIHAT SEMUA GALERI</a>
