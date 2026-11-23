@@ -24,7 +24,7 @@
             <div class="text-center">
                 <h2 class="text-3xl  font-extrabold uppercase tracking-wide mb-4">TENTANG KAMI</h2>
                 <p class="text-sm text-neutral-600 leading-relaxed max-w-md mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.
+                    Tasty Food adalah restoran yang berdedikasi untuk menyajikan hidangan lezat dan sehat kepada pelanggan kami. Kami percaya bahwa makanan yang baik tidak hanya memuaskan selera, tetapi juga memberikan manfaat bagi kesehatan.
                 </p>
             </div>
         </div>
@@ -36,26 +36,26 @@
             {{-- card --}}
             <div class="bg-white rounded-2xl text-center shadow-2xl px-6 pb-8">
                 <img src="{{ asset('asset/img-1.png') }}" alt="" class="w-36 h-36 object-cover rounded-full mx-auto -mt-20 hover:animate-spin hover:[animation-duration:20s] hover:scale-105 transition duration-300">
-                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">Menu 1</h3>
-                <p class="text-xs text-neutral-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.</p>
+                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">RAINBOW POKE BOWL</h3>
+                <p class="text-xs text-neutral-500 leading-relaxed">Perpaduan potongan salmon panggang lembut dengan sayuran segar, jagung manis, dan telur rebus kaya protein untuk energi harianmu.</p>
             </div>
             {{-- card --}}
             <div class="bg-white rounded-2xl text-center shadow-2xl px-6 pb-8">
                 <img src="{{ asset('asset/img-2.png') }}" alt="" class="w-36 h-36 object-cover rounded-full mx-auto -mt-20 hover:animate-spin hover:[animation-duration:20s] hover:scale-105 transition duration-300">
-                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">Menu 2</h3>
-                <p class="text-xs text-neutral-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.</p>
+                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">GRILLED HERB SALMON</h3>
+                <p class="text-xs text-neutral-500 leading-relaxed">Filet salmon panggang bumbu rempah pilihan yang disajikan hangat bersama tumis brokoli segar dan nasi biji-bijian bernutrisi tinggi.</p>
             </div>
             {{-- card --}}
             <div class="bg-white rounded-2xl text-center shadow-2xl px-6 pb-8">
                 <img src="{{ asset('asset/img-3.png') }}" alt="" class="w-36 h-36 object-cover rounded-full mx-auto -mt-20 hover:animate-spin hover:[animation-duration:20s] hover:scale-105 transition duration-300">
-                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">Menu 3</h3>
-                <p class="text-xs text-neutral-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.</p>
+                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">SEAFOOD RAMEN BOWL</h3>
+                <p class="text-xs text-neutral-500 leading-relaxed">Mie ramen kenyal dalam kuah kaldu gurih kaya rasa, lengkap dengan udang segar, telur rebus lembut, dan taburan daun bawang.</p>
             </div>
             {{-- card --}}
             <div class="bg-white rounded-2xl text-center shadow-2xl px-6 pb-8">
                 <img src="{{ asset('asset/img-4.png') }}" alt="" class="w-36 h-36 object-cover rounded-full mx-auto -mt-20 hover:animate-spin hover:[animation-duration:20s] hover:scale-105 transition duration-300">
-                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">Menu 4</h3>
-                <p class="text-xs text-neutral-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquet, nunc nisl aliquet nunc, vitae aliquet nisl nunc vitae nisl.</p>
+                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">FIG & CHEESE PLATTER</h3>
+                <p class="text-xs text-neutral-500 leading-relaxed">Sajian istimewa kombinasi buah ara segar, zaitun hijau, potongan daging asap, dan keju pilihan untuk hidangan pembuka yang elegan.</p>
             </div>
         </div>
     </section>
