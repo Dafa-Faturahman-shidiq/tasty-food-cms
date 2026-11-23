@@ -7,7 +7,7 @@
     {{-- HERO SECTION --}}
     <section class="bg-[#F4F4F4] relative overflow-hidden pt-40 pb-24 lg:pb-32">
         <div class="tasty-container grid grid-cols-1 lg:grid-cols-2">
-            <div class="flex flex-col items-start gap-4 ">
+            <div class=" relative z-10 max-w-xl flex flex-col items-start gap-4 ">
                 <div class="w-16 h-[2px] bg-black"></div>
                 <h2 class="text-4xl font-light">HEALTHY</h2>
                 <h2 class="text-4xl font-extrabold">TASTY FOOD</h2>

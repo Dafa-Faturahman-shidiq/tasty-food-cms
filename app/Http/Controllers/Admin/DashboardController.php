@@ -14,7 +14,15 @@ class DashboardController extends Controller
         $totalNews      = News::count();
         $totalGalleries = Gallery::count();
         $unreadContacts = Contact::where('is_read', false)->count();
+        $latestNews = News::latest()->get()->take(5);
+        $latestContacts = Contact::latest()->get()->take(5);
 
-        return view('admin.dashboard', compact('totalNews', 'totalGalleries', 'unreadContacts'));
+        return view('admin.dashboard', compact(
+            'totalNews', 
+            'totalGalleries', 
+            'unreadContacts',
+            'latestNews',
+            'latestContacts'
+            ));
     }
 }

@@ -12,8 +12,8 @@ use App\Http\Controllers\Admin\CompanyProfileController;
 
 // AUTHENTICATION
 Route::middleware('guest')->group(function () {
-    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post'); 
 });
 
 // ADMIN
@@ -45,6 +45,4 @@ Route::get('/contact', [PengunjungController::class, 'showContact'])->name('cont
 Route::post('/contact', [PengunjungController::class, 'storeContact'])->name('contact.store');
 
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+
