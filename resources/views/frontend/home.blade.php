@@ -33,30 +33,16 @@
     {{-- 4 MENU --}}
     <section style="background-image: url('{{ asset('asset/Group 70.png') }}');" class="bg-cover bg-center py-20 pt-28 pb-20">
         <div class="tasty-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-24 lg:gap-y-0">
-            {{-- card --}}
-            <div class="bg-white rounded-2xl text-center shadow-2xl px-6 pb-8">
-                <img src="{{ asset('asset/img-1.png') }}" alt="" class="w-36 h-36 object-cover rounded-full mx-auto -mt-20 hover:animate-spin hover:[animation-duration:20s] hover:scale-105 transition duration-300">
-                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">RAINBOW POKE BOWL</h3>
-                <p class="text-xs text-neutral-500 leading-relaxed">Perpaduan potongan salmon panggang lembut dengan sayuran segar, jagung manis, dan telur rebus kaya protein untuk energi harianmu.</p>
-            </div>
-            {{-- card --}}
-            <div class="bg-white rounded-2xl text-center shadow-2xl px-6 pb-8">
-                <img src="{{ asset('asset/img-2.png') }}" alt="" class="w-36 h-36 object-cover rounded-full mx-auto -mt-20 hover:animate-spin hover:[animation-duration:20s] hover:scale-105 transition duration-300">
-                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">GRILLED HERB SALMON</h3>
-                <p class="text-xs text-neutral-500 leading-relaxed">Filet salmon panggang bumbu rempah pilihan yang disajikan hangat bersama tumis brokoli segar dan nasi biji-bijian bernutrisi tinggi.</p>
-            </div>
-            {{-- card --}}
-            <div class="bg-white rounded-2xl text-center shadow-2xl px-6 pb-8">
-                <img src="{{ asset('asset/img-3.png') }}" alt="" class="w-36 h-36 object-cover rounded-full mx-auto -mt-20 hover:animate-spin hover:[animation-duration:20s] hover:scale-105 transition duration-300">
-                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">SEAFOOD RAMEN BOWL</h3>
-                <p class="text-xs text-neutral-500 leading-relaxed">Mie ramen kenyal dalam kuah kaldu gurih kaya rasa, lengkap dengan udang segar, telur rebus lembut, dan taburan daun bawang.</p>
-            </div>
-            {{-- card --}}
-            <div class="bg-white rounded-2xl text-center shadow-2xl px-6 pb-8">
-                <img src="{{ asset('asset/img-4.png') }}" alt="" class="w-36 h-36 object-cover rounded-full mx-auto -mt-20 hover:animate-spin hover:[animation-duration:20s] hover:scale-105 transition duration-300">
-                <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">FIG & CHEESE PLATTER</h3>
-                <p class="text-xs text-neutral-500 leading-relaxed">Sajian istimewa kombinasi buah ara segar, zaitun hijau, potongan daging asap, dan keju pilihan untuk hidangan pembuka yang elegan.</p>
-            </div>
+            @forelse ($menus as $menu)
+                <div class="bg-white rounded-2xl text-center shadow-2xl px-6 pb-8">
+                    <img src="{{ asset($menu->image) }}" alt="{{ $menu->name }}" 
+                            class="w-36 h-36 object-cover rounded-full mx-auto -mt-20 hover:animate-spin hover:[animation-duration:20s] hover:scale-105 transition duration-300">
+                    <h3 class="font-extrabold text-base uppercase mt-5 mb-3 tracking-wide">{{ $menu->name }}</h3>
+                    <p class="text-xs text-neutral-500 leading-relaxed">{{ $menu->description }}</p>
+                </div>
+            @empty
+                <p class="col-span-full text-center text-white text-sm">Belum ada menu yang ditambahkan.</p>
+            @endforelse
         </div>
     </section>
 

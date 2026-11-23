@@ -7,18 +7,23 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Gallery;
 use App\Models\Contact;
+use App\Models\Menu;
 
 class PengunjungController extends Controller
 {
     // PENGUNJUNG : HOME
     public function showHome()
     {
-        // 1 Berita Spesifik
+
+        // Menu
+        $menus = Menu::where('is_featured', true)->latest()->take(4)->get();
+
+        //  Berita Spesifik
         $featuredNews = News::where('is_featured', true)
                                 ->latest()
                                 ->first();
 
-        // 4 berita lainnya
+        //  berita lainnya
         $otherNews = News::where('is_featured', false)
                                 ->latest()
                                 ->take(4)
@@ -29,7 +34,7 @@ class PengunjungController extends Controller
                             ->take(6)
                             ->get();
 
-        return view('frontend.home', compact('featuredNews', 'otherNews', 'gallerys'));
+        return view('frontend.home', compact('featuredNews', 'otherNews', 'gallerys', 'menus'));
     }
 
     // PENGUNJUNG : ABOUT
